@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="../WEB-INF/template/template.xhtml">
+
+
+
+	<h:head></h:head>
+	<ui:define name="content">
+	<h:outputLabel value="Outil de gestion de projet pour les equipes Agiles" />
+		<h:outputLabel value="Vous etes dans l'espace pour DEVELOPPER et SCRUM_MASTER" />
+
+		<h:form>
+			<h:dataTable value="#{techBean.listeProjects}" border="1" var="item">
+
+				<h:column>
+					<!-- column header -->
+					<f:facet name="header">Libelle</f:facet>
+					<!-- row record -->
+    				#{item.title}
+    			</h:column>
+
+				<h:column>
+					<f:facet name="header">Description</f:facet>
+    				#{item.description}
+    			</h:column>
+
+
+
+
+
+			</h:dataTable>
+		</h:form>
+
+<h:outputLabel value="Methodologie utilisé : SCRUM" />
+
+
+	</ui:define>
+</ui:composition>
